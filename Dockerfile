@@ -8,11 +8,19 @@ RUN ln -sf /usr/share/zoneinfo/${REGION} /etc/localtime
 
 RUN apk --no-cache add nginx
 
-RUN apk --no-cache add php php-cli php-fpm php-json php-opcache php-gd php-mysqli php-pdo_mysql php-zip php-mbstring php-phar php-session php-fileinfo php-tokenizer php-dom php-simplexml php-xml php-xmlwriter php-curl php81-mongodb
+RUN apk --no-cache add php82 php82-cli php82-fpm php82-json php82-opcache php82-gd php82-mysqli php82-pdo_mysql php82-zip php82-mbstring php82-phar php82-session php82-fileinfo php82-tokenizer php82-dom php82-simplexml php82-xml php82-xmlwriter php82-curl php82-mongodb php82-pear php82-dev
 
-RUN apk --no-cache add curl supervisor dos2unix iputils-ping mysql-client tzdata nano
+RUN apk --no-cache add curl supervisor dos2unix iputils-ping mysql-client tzdata nano build-base
 
 RUN apk --no-cache add nodejs npm
+
+RUN cp /usr/bin/php82 /usr/bin/php
+RUN cp /usr/bin/pecl82 /usr/bin/pecl
+
+COPY ./files/mongodb-1.17.0.tgz ./mongodb-1.17.0.tgz
+
+RUN yes '' | pecl82 install --offline ./mongodb-1.17.0.tgz
+RUN rm -rf ./mongodb-1.17.0.tgz
 
 # set composer related environment variables
 ENV PATH="/composer/vendor/bin:$PATH" \
