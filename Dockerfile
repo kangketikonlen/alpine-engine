@@ -8,9 +8,9 @@ RUN ln -sf /usr/share/zoneinfo/${REGION} /etc/localtime
 
 RUN apk --no-cache add nginx
 
-RUN apk --no-cache add php php-cli php-fpm php-json php-opcache php-gd php-mysqli php-pdo_mysql php-zip php-mbstring php-phar php-session php-fileinfo php-tokenizer php-dom php-simplexml php-xml php-xmlwriter php-curl
+RUN apk --no-cache add php php-cli php-fpm php-json php-opcache php-gd php-mysqli php-pdo_mysql php-zip php-mbstring php-phar php-session php-fileinfo php-tokenizer php-dom php-simplexml php-xml php-xmlwriter php-curl php81-mongodb
 
-RUN apk --no-cache add curl supervisor dos2unix iputils-ping mysql-client tzdata
+RUN apk --no-cache add curl supervisor dos2unix iputils-ping mysql-client tzdata nano
 
 RUN apk --no-cache add nodejs npm
 
