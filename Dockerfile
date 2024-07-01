@@ -1,4 +1,4 @@
-FROM alpine:3.18.4
+FROM alpine:3.20.1
 
 # Set misc environment
 ENV REGION Asia/Jakarta
