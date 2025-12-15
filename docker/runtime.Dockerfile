@@ -1,8 +1,6 @@
 FROM alpine:3.20.1
 
-ENV REGION=Asia/Jakarta
-
-RUN ln -sf /usr/share/zoneinfo/${REGION} /etc/localtime
+RUN ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # PHP runtime + nginx
 RUN apk --no-cache add \

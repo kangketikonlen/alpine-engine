@@ -1,10 +1,7 @@
 FROM alpine:3.20.1
 
-# Set misc environment
-ENV REGION Asia/Jakarta
-
 # Set the timezone to Asia/Jakarta
-RUN ln -sf /usr/share/zoneinfo/${REGION} /etc/localtime
+RUN ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 RUN apk --no-cache add nginx
 
