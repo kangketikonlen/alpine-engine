@@ -1,5 +1,7 @@
 FROM alpine:3.20.1
 
+LABEL org.opencontainers.image.description = "Runtime environment for PHP 8.2, Nginx, MySQL client, Supervisor"
+
 ENV REGION=Asia/Jakarta
 
 RUN ln -sf /usr/share/zoneinfo/${REGION} /etc/localtime

@@ -6,7 +6,7 @@ on:
 env:
   image_name: ${{ github.event.repository.name }}
 
-name: 📜 Test, pack & ship!
+name: 📜 Building Image
 jobs:
   build:
     name: 📦 Build the app
