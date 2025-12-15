@@ -1,7 +1,5 @@
 FROM ghcr.io/kangketikonlen/alpine-engine:runtime
 
-LABEL org.opencontainers.image.description "Builder image for alpine-engine"
-
 # Build tools only
 RUN apk --no-cache add \
     nodejs \
