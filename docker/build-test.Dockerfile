@@ -1,4 +1,4 @@
-FROM ghcr.io/kangketikonlen/alpine-engine:runtime
+FROM localhost/alpine-engine:runtime
 
 # Build tools only
 RUN apk --no-cache add \
