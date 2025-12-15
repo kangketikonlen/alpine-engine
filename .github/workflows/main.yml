@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - "stable"
+      - "runtime"
 
 env:
   image_name: ${{ github.event.repository.name }}
