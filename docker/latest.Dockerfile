@@ -6,12 +6,12 @@ ENV REGION Asia/Jakarta
 # Set the timezone to Asia/Jakarta
 RUN ln -sf /usr/share/zoneinfo/${REGION} /etc/localtime
 
-# Copy php configuration 
-COPY ./docker/php.ini /etc/php82/php.ini
-
 RUN apk --no-cache add nginx
 
-RUN apk --no-cache add php82 php82-cli php82-fpm php82-json php82-opcache php82-gd php82-mysqli php82-pdo_mysql php82-zip php82-mbstring php82-phar php82-session php82-fileinfo php82-tokenizer php82-dom php82-simplexml php82-xml php82-xmlwriter php82-curl php82-mongodb php82-pear php82-dev php82-pcntl php82-posix
+RUN apk --no-cache add php82 php82-cli php82-fpm php82-json php82-opcache php82-gd php82-mysqli \
+	php82-pdo_mysql php82-zip php82-mbstring php82-phar php82-session php82-fileinfo php82-tokenizer \
+	php82-dom php82-simplexml php82-xml php82-xmlwriter php82-curl php82-mongodb php82-pear php82-dev \
+	php82-pcntl php82-posix
 
 RUN apk --no-cache add curl supervisor dos2unix iputils-ping mysql-client tzdata nano build-base
 
@@ -32,7 +32,10 @@ RUN curl -sS https://getcomposer.org/installer | \
 	&& composer --ansi --version --no-interaction --no-dev
 
 # copy supervisor configuration
-COPY ./docker/supervisord.conf /etc/supervisord.conf
+COPY ./docker/conf/supervisord.conf /etc/supervisord.conf
+
+# Copy php configuration 
+COPY ./docker/conf/php.ini /etc/php82/php.ini
 
 EXPOSE 80
 
