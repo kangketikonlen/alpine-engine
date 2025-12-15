@@ -30,6 +30,7 @@ RUN apk --no-cache add \
     php82-mongodb \
     php82-pcntl \
     php82-posix \
+    php82-iconv \
     supervisor \
     tzdata \
     dos2unix \
