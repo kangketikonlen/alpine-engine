@@ -6,6 +6,7 @@ RUN apk --no-cache add \
     npm \
     build-base \
     php82-dev \
+    php82-ctype \
     curl
 
 # Composer setup

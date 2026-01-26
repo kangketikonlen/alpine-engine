@@ -34,6 +34,7 @@ RUN apk --no-cache add \
 	php82-pcntl \
     php82-posix \
     php82-iconv \
+    php82-ctype \
     supervisor \
     tzdata \
     dos2unix \
