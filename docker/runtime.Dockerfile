@@ -8,8 +8,8 @@ RUN apk --no-cache add nginx php84 php84-cli php84-fpm php84-json php84-opcache 
     php84-dom php84-simplexml php84-xml php84-xmlwriter php84-xmlreader php84-curl php84-mongodb \
     php84-pear php84-dev php84-pcntl php84-posix php84-iconv php84-ctype supervisor tzdata dos2unix mysql-client iputils-ping
 
-COPY ./conf/php.ini /etc/php84/php.ini
-COPY ./conf/supervisord.conf /etc/supervisord.conf
+COPY ./docker/conf/php.ini /etc/php84/php.ini
+COPY ./docker/conf/supervisord.conf /etc/supervisord.conf
 
 EXPOSE 80
 
