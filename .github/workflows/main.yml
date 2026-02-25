@@ -61,12 +61,12 @@ jobs:
         run: |
           docker build \
             -f docker/runtime.Dockerfile \
-            -t ghcr.io/${{ env.IMAGE_NAME }}:runtime \
+            -t ghcr.io/${{ env.IMAGE_NAME }}:runtime-84 \
             .
 
       - name: 🛳️ Push runtime image
         run: |
-          docker push ghcr.io/${{ env.IMAGE_NAME }}:runtime
+          docker push ghcr.io/${{ env.IMAGE_NAME }}:runtime-84
 
       # -----------------------------
       # 3️⃣ Build & push BUILD image
@@ -75,9 +75,9 @@ jobs:
         run: |
           docker build \
             -f docker/build.Dockerfile \
-            -t ghcr.io/${{ env.IMAGE_NAME }}:build \
+            -t ghcr.io/${{ env.IMAGE_NAME }}:build-84 \
             .
 
       - name: 🛳️ Push build image
         run: |
-          docker push ghcr.io/${{ env.IMAGE_NAME }}:build
+          docker push ghcr.io/${{ env.IMAGE_NAME }}:build-84
