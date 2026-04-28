@@ -7,7 +7,6 @@ RUN apk --no-cache add \
     build-base \
     php84-dev \
     php84-ctype \
-    php84-sqlite \
     curl
 
 # Composer setup
